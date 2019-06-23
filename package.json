@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "webpack --mode production --watch"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,25 @@
   },
   "homepage": "https://github.com/sintur2527/cows-practice#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
-    "browser-sync": "^2.26.7",
     "express": "^4.17.1",
     "mysql": "^2.17.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "keywords": [],
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.7.2",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
+  },
   "description": ""
 }
