@@ -1,0 +1,11 @@
+CREATE database IF NOT EXISTS cows;
+
+USE cows;
+
+DROP TABLE IF EXISTS cows;
+
+CREATE TABLE cows (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(20),
+  description VARCHAR(256)
+);
