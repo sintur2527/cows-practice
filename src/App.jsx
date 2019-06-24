@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Details from './Details.jsx';
 import CowForm from './CowForm.jsx';
 import CowList from './CowList.jsx';
-import Axios from 'axios';
+import getCows from './lib/getCows.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -12,20 +12,15 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    Axios.get('http://localhost:8000/api/cows')
-      .then(({ data }) => {
-        this.setState({
-          data,
-        });
-      })
-      .catch(err => {
-        console.error(err);
+    getCows.get().then(({ data }) => {
+      this.setState({
+        data,
       });
+    });
   }
 
   render() {
     let cowList = this.state.data || [];
-    console.log('cowList', cowList);
 
     return (
       <Fragment>

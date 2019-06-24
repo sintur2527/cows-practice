@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class CowListEntry extends Component {
   render() {
-    console.log('this.props', this.props);
     return (
-      <div>
-        <li>{this.props.cow}</li>
-      </div>
+      <Fragment>
+        <div>{this.props.value.toUpperCase()}</div>
+      </Fragment>
     );
   }
 }
