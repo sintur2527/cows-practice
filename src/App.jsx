@@ -8,7 +8,10 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      currentCow: null,
+    };
+    this.handleCowClick = this.handleCowClick.bind(this);
   }
 
   componentDidMount() {
@@ -19,22 +22,28 @@ export default class App extends Component {
     });
   }
 
+  handleCowClick(cow) {
+    this.setState({
+      currentCow: cow,
+    });
+  }
+
   render() {
     let cowList = this.state.data || [];
 
     return (
       <Fragment>
-        <div className="row">
-          <div className="col-md-7">
-            <Details />
-          </div>
-          <div className="col-md-5">
-            <CowList cows={cowList} />
-          </div>
-        </div>
-        <div className="row">
+        <div className="row align-items-start">
           <div className="col-md-5">
             <CowForm />
+          </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-md-5">
+            <CowList handleCowClick={this.handleCowClick} cows={cowList} />
+          </div>
+          <div className="col-md-7">
+            <Details cow={this.state.currentCow} />
           </div>
         </div>
       </Fragment>

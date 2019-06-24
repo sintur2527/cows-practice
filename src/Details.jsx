@@ -1,7 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class Details extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return <div>Here are the cow details</div>;
+    return (
+      <Fragment>
+        <h3>Description:</h3>
+        <div>{this.props.cow}</div>
+      </Fragment>
+    );
   }
 }
