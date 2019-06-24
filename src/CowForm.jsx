@@ -26,7 +26,6 @@ export default class CowForm extends Component {
       name: this.state.name,
       description: this.state.description,
     }).then(res => {
-      $('form :input').attr('value', '');
       console.log('Successful Post!');
     });
   }
